@@ -1,8 +1,10 @@
 package com.hackydesk.thesaviour;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -115,17 +117,15 @@ public class settings extends Fragment {
 
                 if (rapidsos.isChecked())
                 {
-                    Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-                    startActivity(intent);
-
-                    Toast.makeText(getContext(), "Find The Saviour App And Activate Accessibility Permission", Toast.LENGTH_SHORT).show();
-
-                        prefeditor.putBoolean("RAPID_SOS",true);
-                        rapidsos.setChecked(true);
+                    accessibiltyconsentpopup();
                 }
                 else{
 //                    Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
 //                    startActivity(intent);
+                    Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+                    startActivity(intent);
+
+                    Toast.makeText(getContext(), "Find The Saviour App And Turn Off Accessibility Permission", Toast.LENGTH_SHORT).show();
                     prefeditor.putBoolean("RAPID_SOS",false);
                 }
                 prefeditor.apply();
@@ -179,6 +179,35 @@ public class settings extends Fragment {
     public void onResume() {
         super.onResume();
         LoadLastState();
+    }
+    void accessibiltyconsentpopup()
+    {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder((getContext()));
+        builder.setTitle("Accessibility Permission Needed");
+        builder.setMessage("Don't Worry We Are not  Collecting Any Data with This Permission It Will  Only Access Volume Up Button Events By Which You Can Activate Sos Mode Without Opening App To Turn Off Permission Use Rapid Sos Switch Again ");
+        builder.setIcon(R.drawable.mainlog_transparent_bg);
+        builder.setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+                startActivity(intent);
+
+                Toast.makeText(getContext(), "Find The Saviour App And Activate Accessibility Permission", Toast.LENGTH_SHORT).show();
+
+                prefeditor.putBoolean("RAPID_SOS",true);
+                rapidsos.setChecked(true);
+            }
+        }).setNegativeButton("Close ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+                rapidsos.setChecked(false);
+                prefeditor.putBoolean("RAPID_SOS",false);
+            }
+        });
+        prefeditor.apply();
+        builder.show();
     }
 
 }

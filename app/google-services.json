@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "695103598236",
-    "firebase_url": "https://the-saviour-7b9a0-default-rtdb.firebaseio.com",
-    "project_id": "the-saviour-7b9a0",
-    "storage_bucket": "the-saviour-7b9a0.appspot.com"
+    "project_number": "692902113704",
+    "project_id": "the-saviour-83b6a",
+    "storage_bucket": "the-saviour-83b6a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:695103598236:android:d5fcee36da9a9513fd0759",
+        "mobilesdk_app_id": "1:692902113704:android:0e114fec7af9224a622d9d",
         "android_client_info": {
-          "package_name": "com.example.thesaviour"
+          "package_name": "com.hackydesk.thesaviour"
         }
       },
       "oauth_client": [
         {
-          "client_id": "695103598236-lv0pr97or5e0bear790oqo9kbfi8f24g.apps.googleusercontent.com",
+          "client_id": "692902113704-i9hktnmsfl8a1v1j3rhhj4pvom4rbuh5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDCgzFEsA4uwZ5tCXl-oG9NgjJhMVRyUh4"
+          "current_key": "AIzaSyAGYiCYuA2n24FGNtlX6Wmm_t2mQETntc4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "695103598236-lv0pr97or5e0bear790oqo9kbfi8f24g.apps.googleusercontent.com",
+              "client_id": "692902113704-i9hktnmsfl8a1v1j3rhhj4pvom4rbuh5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

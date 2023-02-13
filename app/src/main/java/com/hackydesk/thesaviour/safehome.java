@@ -597,7 +597,7 @@ public class safehome extends Fragment implements OnMapReadyCallback,connectionc
         functiontools journeynotification = new functiontools(getActivity(),getContext());
       if(code==0)
       {
-          journeynotification.sendOnlineMesageToparent("The Saviour",childname + " Stopped Sharing Location");
+          journeynotification.sendOnlineMesageToparent("The Saviour",childname + " Has Stopped Sharing Location");
       }
       if (code==1)
       {

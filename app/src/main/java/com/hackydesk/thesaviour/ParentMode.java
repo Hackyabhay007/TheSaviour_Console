@@ -198,6 +198,7 @@ boolean result = false;
                 extrafeatures.requestGPSPermission();
             }
             else {
+
                 result =  true;
             }
         }

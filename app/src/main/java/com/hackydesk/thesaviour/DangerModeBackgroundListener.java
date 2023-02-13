@@ -96,7 +96,7 @@ public class DangerModeBackgroundListener extends AccessibilityService {
         {
             Intent serviceIntent = new Intent(this, DangerModeService.class);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                Toast.makeText(this, "Starting Danger Mode", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Starting SOS Mode", Toast.LENGTH_SHORT).show();
                 startForegroundService(serviceIntent);
             }
         }

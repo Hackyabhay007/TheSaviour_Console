@@ -297,7 +297,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="10dp"
-                                android:text="Open Direction"
+                                android:text="GMaps Direction"
                                 android:textColor="@color/feildtextcolor"
                                 android:textSize="16sp" />
 

@@ -36,7 +36,7 @@
                 android:text="@string/login"
                 android:textAlignment="center"
                 android:textColor="@color/hardtext"
-                android:textSize="34sp"
+                android:textSize="@dimen/_20sdp"
                 app:drawableStartCompat="@drawable/logologin" />
 
             <EditText

@@ -248,6 +248,20 @@ public class parenthome<permissionsStr> extends AppCompatActivity implements OnM
         //asks for gps permission
         functiontools.requestGPSPermission();
 
+        if (!functiontools.checkConnection())
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("No Internet");
+            builder.setMessage("Turn On Internet")
+                    .setCancelable(false)
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            //Grant permission
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
 
 
         CallBox.setOnClickListener(new View.OnClickListener() {
